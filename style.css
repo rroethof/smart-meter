@@ -1,0 +1,153 @@
+
+
+html { overflow: display; }
+body { 
+		font-family: Arial, Helvetica,sans-serif; 
+		background-color: #000; 
+		#background:#000 url('/media/img/bg.png') no-repeat center 40%;
+		background:#000;
+		text-align: center; 
+}
+
+div#cnt {
+	width: 990px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+a, a:visited { text-decoration: none; color: #336699; }
+a:hover { text-decoration: none; color: #003366; }
+.clear { clear: both; } 
+
+h1 { display:none; }
+
+#camframe {
+	float: left;
+	margin: 0px;
+        padding:0 24px;
+	text-align: center;
+}
+
+#frame {
+	float: left;
+	margin: 0px;
+	padding: 0px 2px 0px 2px;
+}
+
+#label_lg {
+	font-family: arial;
+	font-weight: normal;
+	color: #999;
+	font-size: 16px;
+	margin-top: -20px;
+	height: 25px;
+	line-height: 10px;
+}
+
+#graph_lg {
+	font-family: arial;
+	font-weight: normal;
+	color: #999;
+	font-size: 16px;
+	margin-top: -110px;
+	height: 25px;
+	line-height: 10px;
+}
+
+#actual_consumed {
+	font-family: Orbitron, serif;
+	font-weight: bold;
+	width: 300px;
+	padding: 5px;
+	border: 1px solid #666;
+	height: 120px;	
+	line-height: 110px; 
+	font-size: 50px;	
+	color: darkorange;
+	margin: 0px ;
+}
+
+#actual_produced {
+	font-family: Orbitron, serif;
+	font-weight: bold;
+	width: 300px;
+	padding: 5px;
+	border: 1px solid #666;
+	height: 120px;	
+	line-height: 110px; 
+	font-size: 50px;	
+	color: lightgreen;
+	margin: 0px ;
+}
+
+#solar_pac {
+	font-family: Orbitron, serif;
+	font-weight: bold;
+	width: 300px;
+	padding: 5px;
+	border: 1px solid #666;
+	height: 120px;	
+	line-height: 110px; 
+	font-size: 50px;	
+	color: lightgreen;
+	margin: 0px ;
+}
+
+#consumed_low, #sockconn, #consumed_low, #actual_rate, #gas,
+#consumed_high, #produced_high, #produced_low, #empty, #status, 
+#estate {
+	font-family: Orbitron, serif;
+	font-weight: bold;
+	width: 250px;
+	padding: 5px;
+	border: 1px solid #666;
+	height: 120px;
+	line-height: 125px; 		
+	font-size: 90px;
+	color: #999;
+	margin: 0px ;
+}
+
+#sockconn {
+	width: 300px;
+}
+
+#otxt { 
+	width: 560px; 
+	font-size: 14px;
+	line-height: 23px;
+	color: darkorange;
+}
+
+#al { 
+	float: left;
+	font-family: arial;
+	font-weight: normal;
+	color: #999;
+	font-size: 14px;
+	margin-top: 10px;
+	height: 25px;
+	line-height: 10px;
+}
+
+.on { background: #993300; }
+
+div.myMinButton input { 
+	background:url(min.png) no-repeat center top; 
+	cursor:pointer; 
+	width: 72px; 
+	height: 59px; 
+	border: none; 
+	margin-left: 15px;
+	margin-top: 6px;
+ 
+} 
+div.myPlusButton input { 
+	background:url(plus.png) no-repeat center top; 
+	cursor:pointer; 
+	width: 72px; 
+	height: 59px; 
+	border: none; 
+	margin-left: 5px;
+	margin-top: 6px;
+} 
