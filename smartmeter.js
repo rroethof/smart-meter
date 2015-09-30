@@ -29,25 +29,25 @@ SmartMeter.prototype.update = function(data) {
     if(data.ConsumedPowerRate1 != this.ConsumedPowerRate1) {
         this.ConsumedPowerRate1 = data.ConsumedPowerRate1;
         mclient.publish('smartmeter/consumed_low', data.ConsumedPowerRate1.toString(), {retain: true});
-        //console.log(data.ConsumedPowerRate1)
+        console.log(data.ConsumedPowerRate1)
     }
   
     if(data.ConsumedPowerRate2 != this.ConsumedPowerRate2) {
         this.ConsumedPowerRate2 = data.ConsumedPowerRate2;
         mclient.publish('smartmeter/consumed_high', data.ConsumedPowerRate2.toString(), {retain: true});
-        //console.log(data.ConsumedPowerRate2)
+        console.log(data.ConsumedPowerRate2)
     }
   
     if(data.ProducedPowerRate1 != this.ProducedPowerRate1) {
         this.ProducedPowerRate1 = data.ProducedPowerRate1;
         mclient.publish('smartmeter/produced_low', data.ProducedPowerRate1.toString(), {retain: true});
-        //console.log(data.ProducedPowerRate1)
+        console.log(data.ProducedPowerRate1)
     }
   
     if(data.ProducedPowerRate2 != this.ProducedPowerRate2) {
         this.ProducedPowerRate2 = data.ProducedPowerRate2;
         mclient.publish('smartmeter/produced_high', data.ProducedPowerRate2.toString(), {retain: true});
-        //console.log(data.ProducedPowerRate2)
+        console.log(data.ProducedPowerRate2)
     }
   
     if(data.ActualPowerRate != this.ActualPowerRate) {
@@ -56,7 +56,7 @@ SmartMeter.prototype.update = function(data) {
         else {var new_ActualPowerRate = 'High'}; 
         this.ActualPowerRate = data.ActualPowerRate;
         mclient.publish('smartmeter/actual_rate', new_ActualPowerRate, {retain: true});
-        //console.log(new_ActualPowerRate);
+        console.log(new_ActualPowerRate);
         }
   
     if(data.ActualConsumedPower != this.ActualConsumedPower) {
@@ -68,14 +68,14 @@ SmartMeter.prototype.update = function(data) {
     if(data.ActualProducedPower != this.ActualProducedPower) {
         this.ActualProducedPower = data.ActualProducedPower;
         mclient.publish('smartmeter/actual_produced', data.ActualProducedPower.toString(), {retain: true});
-        //console.log(data.ActualProducedPower)
+        console.log(data.ActualProducedPower)
     }
   
     if(this.GasTimestamp != data.GasTimestamp) {
         this.ConsumedGas = data.ConsumedGas;
         this.GasTimestamp = data.GasTimestamp;
         mclient.publish('smartmeter/gas', data.ConsumedGas.toString(), {retain: true});
-        //console.log(data.ConsumedGas)
+        console.log(data.ConsumedGas)
     }
 };
 function processTelegram(telegram) {
@@ -117,10 +117,10 @@ function processTelegram(telegram) {
             parseInt(telegram[24].substr(21,2))
         );
         gasTimestamp = Math.round(gasTimestamp.getTime() / 1000);
-        consumedGas = parseFloat(telegram[24].substr(1,9));
+        consumedGas = parseFloat(telegram[24].substr(26,9));
 //////
-        console.log('Gas Timestamp: ' + gasTimestamp);
-        console.log('Gas Consumed: ' + consumedGas);
+//        console.log('Gas Timestamp: ' + gasTimestamp);
+//        console.log('Gas Consumed: ' + consumedGas);
 /////
         smartMeter.update({
             ConsumedPowerRate1: consumedPowerRate1,
